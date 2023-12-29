@@ -12,7 +12,7 @@ export default function Test() {
 
     return (
         <div className={clsx(styles['test-case'])}>
-            <div className={clsx(styles['test'])}>{(isDesktop) ? 'aaa' : 'bbb'}</div>
+            <div className={ clsx(isDesktop && styles['test'])}>{(isDesktop) ? 'aaa' : 'bbb'}</div>
         </div>
     );
 }
