@@ -11,6 +11,8 @@ export default function Test() {
     const { isMobile, isTablet, isDesktop } = useResponsive();
 
     return (
-        <div className={clsx(styles['test-case'], isMobile && clsx(styles['test']))}> {(isDesktop) ? 'aaa' : 'bbb'} </div>
+        <div className={clsx(styles['test-case'])}>
+            <div className={clsx(styles['test'])}>{(isDesktop) ? 'aaa' : 'bbb'}</div>
+        </div>
     );
 }

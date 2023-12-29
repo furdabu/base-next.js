@@ -1,7 +1,7 @@
-.test-case{
+.test-case {
     background-color: red;
-}
 
-.test{
-    background-color: blue;
+    >.test {
+        background-color: blue;
+    }
 }
