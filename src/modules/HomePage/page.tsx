@@ -1,9 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
+import { useResponsive } from '@/hooks/responsive';
+
 export default function Test() {
 
-  return (
-    <div className="">This is  a  test</div>
-  );
+    const { isMobile, isTablet, isDesktop } = useResponsive();
+
+    return (
+        <div className=""> { (isDesktop) ? 'aaa' : 'bbb'} </div>
+    );
 }

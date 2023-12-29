@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {useDebounce} from 'react-use';
 
-const useResponsive = () => {
+export  const useResponsive = () => {
   // screen resolutions
   const [state, setState] = useState({
     isMobile: false,
@@ -31,17 +31,16 @@ const useResponsive = () => {
     setState({ isMobile, isTablet, isDesktop });
   };
 
-  // debounce the resize call
-  const debouncedCall:any = useDebounce(onResizeHandler, 500);
+
 
   // add event listener
   const Setup = () => {
-    window.addEventListener("resize", debouncedCall, false);
+    window.addEventListener("resize", onResizeHandler, false);
   };
 
   // remove the listener
   const Cleanup = () => {
-    window.removeEventListener("resize", debouncedCall, false);
+    window.removeEventListener("resize", onResizeHandler, false);
   };
 
   return state;
