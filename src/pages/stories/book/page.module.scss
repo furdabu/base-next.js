@@ -1,0 +1,21 @@
+@import "@/styles/_mixin";
+
+.book-container {
+
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.paragraph-container {
+
+    padding: 7px;
+    border: 1px slateblue solid;
+
+    border-radius: 15px;
+}
+
+.main-container{
+    
+}

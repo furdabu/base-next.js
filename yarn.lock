@@ -2261,6 +2261,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/font@npm:^14.0.4":
+  version: 14.0.4
+  resolution: "@next/font@npm:14.0.4"
+  peerDependencies:
+    next: "*"
+  checksum: 8003cf23c4226dfc4ded2808b16d0a506ca75bf6fc0f2ac51e4ad2cd763e772bace5f9811de5977d869b2f593641da4ce041e2cb213423ae84920b9101a5e0ea
+  languageName: node
+  linkType: hard
+
 "@next/swc-darwin-arm64@npm:14.0.4":
   version: 14.0.4
   resolution: "@next/swc-darwin-arm64@npm:14.0.4"
@@ -10875,6 +10884,7 @@ __metadata:
     "@mantine/spotlight": "npm:^7.3.2"
     "@mantine/tiptap": "npm:^7.3.2"
     "@mantinex/mantine-logo": "npm:^1.0.1"
+    "@next/font": "npm:^14.0.4"
     "@storybook/addon-essentials": "npm:^7.6.5"
     "@storybook/addon-interactions": "npm:^7.6.5"
     "@storybook/addon-links": "npm:^7.6.5"

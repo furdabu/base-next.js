@@ -1,6 +1,7 @@
 @import "@/styles/_mixin";
 
 .text {
+    color: blueviolet;
     @include mq(lg) {
         color: red;
     }

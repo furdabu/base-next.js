@@ -26,6 +26,7 @@
     "@mantine/spotlight": "^7.3.2",
     "@mantine/tiptap": "^7.3.2",
     "@mantinex/mantine-logo": "^1.0.1",
+    "@next/font": "^14.0.4",
     "@tabler/icons-react": "^2.44.0",
     "@tiptap/extension-link": "^2.1.13",
     "@tiptap/react": "^2.1.13",

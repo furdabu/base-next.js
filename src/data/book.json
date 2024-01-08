@@ -1,0 +1,270 @@
+[
+    {
+        "title": "The Amazing Story of Genesis",
+        "reference": "Genesis 1:1-2:3",
+        "characters": [
+            {
+                "name": "Narrator",
+                "id": 1
+            },
+            {
+                "name": "God",
+                "id": 2
+            }
+        ],
+        "script": [
+            {
+                "startat": "12000",
+                "endat": "28000",
+                "speaker": 1,
+                "text": "Once upon a time, there was nothing but darkness. But then, something amazing happened. God decided to create a beautiful world."
+            },
+            {
+                "startat": "28500",
+                "endat": "31906",
+                "speaker": 2,
+                "text": "Let there be light!"
+            },
+            {
+                "startat": "32000",
+                "endat": "42292",
+                "speaker": 2,
+                "text": "God called the light “day” and the darkness “night.” This was the first day."
+            },
+            {
+                "startat": "43000",
+                "endat": "54446",
+                "speaker": 2,
+                "text": "Let there be a space between the waters, to separate the waters of the heavens from the waters of the earth."
+            },
+            {
+                "startat": "54500",
+                "endat": "71589",
+                "speaker": 1,
+                "text": "God separated the waters and called the space between them “the sky.” Evening passed and morning came. This was the second day"
+            },
+            {
+                "startat": "72000",
+                "endat": "81067",
+                "speaker": 2,
+                "text": "Let the water be in one place! And let there be dry land!"
+            },
+            {
+                "startat": "81200",
+                "endat": "93000",
+                "speaker": 1,
+                "text": "God put the water in one place and then made dry land. God looked and He was pleased."
+            },
+            {
+                "startat": "93500",
+                "endat": "99000",
+                "speaker": 2,
+                "text": "Let plants, trees, and fruits grow!"
+            },
+            {
+                "startat": "100000",
+                "endat": "109412",
+                "speaker": 1,
+                "text": "God created the land and the sea, so we could have beautiful mountains, rivers, and oceans."
+            },
+            {
+                "startat": "110000",
+                "endat": "129866",
+                "speaker": 1,
+                "text": "God made plants and trees to give us delicious fruits, beautiful flowers, and shade to relax in. Evening passed and morning came. This was the third day."
+            },
+            {
+                "startat": "130000",
+                "endat": "148414",
+                "speaker": 2,
+                "text": "Let there be things that shine in the sky! Let day and night be divided by them! They shall be signs of the seasons, and of the days and years."
+            },
+            {
+                "startat": "148500",
+                "endat": "169839",
+                "speaker": 1,
+                "text": "God made the sun to shine brightly during the day. He made the moon and the stars to light up the night. Evening passed and morning came. This was the fourth day."
+            },
+            {
+                "startat": "170000",
+                "endat": "177956",
+                "speaker": 2,
+                "text": "Let there be animals on the land and creatures in the sea!"
+            },
+            {
+                "startat": "178000",
+                "endat": "208251",
+                "speaker": 1,
+                "text": "God created all kinds of animals, big and small. He created fish in the sea and birds in the sky. From furry lions to slithery snakes; each one was special! Evening passed and morning came. This was the fifth day."
+            },
+            {
+                "startat": "209000",
+                "endat": "218229",
+                "speaker": 2,
+                "text": "Let us create human beings in our image. Let them rule over living things."
+            },
+            {
+                "startat": "219000",
+                "endat": "234147",
+                "speaker": 1,
+                "text": "God took some soil from the ground and formed a man out of it; He breathed life-giving breath into his nostrils and the man began to live."
+            },
+            {
+                "startat": "234150",
+                "endat": "258138",
+                "speaker": 1,
+                "text": "God made a man and a woman. He decided to let them rule all the creatures. God saw everything He made and He was pleased. Evening passed and morning came. This was the sixth day."
+            },
+            {
+                "startat": "259000",
+                "endat": "269204",
+                "speaker": 1,
+                "text": "After God made everything, He took a rest. God blessed the seventh day."
+            }
+        ],
+        "subinfo": [
+            {
+                "title": "Genesis 1:31",
+                "content": "God looked at everything he had made, and he was very pleased."
+            },
+            {
+                "title": "Words from the Bible - John 1:1-4",
+                "content": "In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. In him was life, and that life was the light of men. "
+            }
+        ]
+    },
+    {
+        "title": "The Amazing Story of Genesis",
+        "reference": "Genesis 1:1-2:3",
+        "characters": [
+            {
+                "name": "Narrator",
+                "id": 1
+            },
+            {
+                "name": "God",
+                "id": 2
+            }
+        ],
+        "script": [
+            {
+                "startat": "12000",
+                "endat": "28000",
+                "speaker": 1,
+                "text": "Once upon a time, there was nothing but darkness. But then, something amazing happened. God decided to create a beautiful world."
+            },
+            {
+                "startat": "28500",
+                "endat": "31906",
+                "speaker": 2,
+                "text": "Let there be light!"
+            },
+            {
+                "startat": "32000",
+                "endat": "42292",
+                "speaker": 2,
+                "text": "God called the light “day” and the darkness “night.” This was the first day."
+            },
+            {
+                "startat": "43000",
+                "endat": "54446",
+                "speaker": 2,
+                "text": "Let there be a space between the waters, to separate the waters of the heavens from the waters of the earth."
+            },
+            {
+                "startat": "54500",
+                "endat": "71589",
+                "speaker": 1,
+                "text": "God separated the waters and called the space between them “the sky.” Evening passed and morning came. This was the second day"
+            },
+            {
+                "startat": "72000",
+                "endat": "81067",
+                "speaker": 2,
+                "text": "Let the water be in one place! And let there be dry land!"
+            },
+            {
+                "startat": "81200",
+                "endat": "93000",
+                "speaker": 1,
+                "text": "God put the water in one place and then made dry land. God looked and He was pleased."
+            },
+            {
+                "startat": "93500",
+                "endat": "99000",
+                "speaker": 2,
+                "text": "Let plants, trees, and fruits grow!"
+            },
+            {
+                "startat": "100000",
+                "endat": "109412",
+                "speaker": 1,
+                "text": "God created the land and the sea, so we could have beautiful mountains, rivers, and oceans."
+            },
+            {
+                "startat": "110000",
+                "endat": "129866",
+                "speaker": 1,
+                "text": "God made plants and trees to give us delicious fruits, beautiful flowers, and shade to relax in. Evening passed and morning came. This was the third day."
+            },
+            {
+                "startat": "130000",
+                "endat": "148414",
+                "speaker": 2,
+                "text": "Let there be things that shine in the sky! Let day and night be divided by them! They shall be signs of the seasons, and of the days and years."
+            },
+            {
+                "startat": "148500",
+                "endat": "169839",
+                "speaker": 1,
+                "text": "God made the sun to shine brightly during the day. He made the moon and the stars to light up the night. Evening passed and morning came. This was the fourth day."
+            },
+            {
+                "startat": "170000",
+                "endat": "177956",
+                "speaker": 2,
+                "text": "Let there be animals on the land and creatures in the sea!"
+            },
+            {
+                "startat": "178000",
+                "endat": "208251",
+                "speaker": 1,
+                "text": "God created all kinds of animals, big and small. He created fish in the sea and birds in the sky. From furry lions to slithery snakes; each one was special! Evening passed and morning came. This was the fifth day."
+            },
+            {
+                "startat": "209000",
+                "endat": "218229",
+                "speaker": 2,
+                "text": "Let us create human beings in our image. Let them rule over living things."
+            },
+            {
+                "startat": "219000",
+                "endat": "234147",
+                "speaker": 1,
+                "text": "God took some soil from the ground and formed a man out of it; He breathed life-giving breath into his nostrils and the man began to live."
+            },
+            {
+                "startat": "234150",
+                "endat": "258138",
+                "speaker": 1,
+                "text": "God made a man and a woman. He decided to let them rule all the creatures. God saw everything He made and He was pleased. Evening passed and morning came. This was the sixth day."
+            },
+            {
+                "startat": "259000",
+                "endat": "269204",
+                "speaker": 1,
+                "text": "After God made everything, He took a rest. God blessed the seventh day."
+            }
+        ],
+        "subinfo": [
+            {
+                "title": "Genesis 1:31",
+                "content": "God looked at everything he had made, and he was very pleased."
+            },
+            {
+                "title": "Words from the Bible - John 1:1-4",
+                "content": "In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. In him was life, and that life was the light of men. "
+            }
+        ]
+    }
+]
