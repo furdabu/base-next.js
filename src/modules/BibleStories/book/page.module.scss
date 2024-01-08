@@ -1,0 +1,8 @@
+@import "@/styles/_mixin";
+
+.text {
+    @include mq(lg) {
+        color: red;
+    }
+}
+
