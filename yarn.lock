@@ -4599,6 +4599,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/howler@npm:^2.2.11":
+  version: 2.2.11
+  resolution: "@types/howler@npm:2.2.11"
+  checksum: 0a6b6d35852f8807ff6513cc101cb4fd7a80a8d9ced8b26cf978ea976b5a7c39ca4b9db06bb76971739fe38695ff4ec91e315d7e99290718fa9fb51e9d826d0b
+  languageName: node
+  linkType: hard
+
 "@types/html-minifier-terser@npm:^6.0.0":
   version: 6.1.0
   resolution: "@types/html-minifier-terser@npm:6.1.0"
@@ -9107,6 +9114,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"howler@npm:^2.2.4":
+  version: 2.2.4
+  resolution: "howler@npm:2.2.4"
+  checksum: 74a295f56fd9b2abce122b27ed12c33fa195fb8a76832803e92d8e462a1eca803b55f44c14db052211d0cfab85c7c5249664c68d95bbbc16c775fac73866c6ef
+  languageName: node
+  linkType: hard
+
 "html-entities@npm:^2.1.0":
   version: 2.4.0
   resolution: "html-entities@npm:2.4.0"
@@ -10898,6 +10912,7 @@ __metadata:
     "@tiptap/react": "npm:^2.1.13"
     "@tiptap/starter-kit": "npm:^2.1.13"
     "@types/eslint": "npm:^8"
+    "@types/howler": "npm:^2.2.11"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18.2.45"
     "@types/react-dom": "npm:^18"
@@ -10907,6 +10922,7 @@ __metadata:
     eslint: "npm:^8.56.0"
     eslint-config-next: "npm:14.0.4"
     eslint-plugin-storybook: "npm:^0.6.15"
+    howler: "npm:^2.2.4"
     modern-css-reset: "npm:^1.4.0"
     next: "npm:14.0.4"
     postcss: "npm:^8.4.32"
