@@ -1,21 +1,66 @@
 @import "@/styles/_mixin";
 
 .book-container {
-
-    padding: 7px;
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 18px;
+
+
 }
 
 .paragraph-container {
 
-    padding: 7px;
-    border: 1px slateblue solid;
+    position: relative;
 
+    padding: 10px;
+    background-color: rgb(247, 247, 247);
+    box-sizing: border-box;
     border-radius: 15px;
+    box-shadow: 0 0 0px 0px rgb(71, 71, 71);
+
+    >.number {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        font-size: 20px;
+        color: rgb(160, 160, 160);
+    }
+
+    >.top {
+        font-weight: bold;
+    }
+
+    >.text {
+        font-size: 15px;
+    }
+
+    &:hover {}
 }
 
-.main-container{
-    
+.main-container {
+    padding: 15px;
+}
+
+
+.highlighted {
+    box-shadow: 0 0 0px 2px rgb(71, 71, 71);
+}
+
+.title-container {
+    padding: 0 5px;
+    margin: 10px 0 20px;
+
+    >h2 {
+        font-size: 20px;
+    }
+
+    >p {
+        border-bottom: 1px black solid;
+    }
+}
+
+.image-container {
+    background-color: rgb(26, 0, 0);
+    padding: 10px;
+    margin: 20px 0;
 }

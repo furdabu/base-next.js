@@ -8,8 +8,17 @@ import clsx from 'clsx';
 import { Roboto_Serif } from 'next/font/google'
 import styles from "./page.module.scss";
 
-const Robot400 = Roboto_Serif({
+const colors = [
+    "#f7f7f7", "#ddf8ff", "#f9ffdf", "#e0ffdf", "#dfeaff",
+]
+
+const Robot300 = Roboto_Serif({
     weight: '300',
+    preload: false,
+})
+
+const Robot700 = Roboto_Serif({
+    weight: '700',
     preload: false,
 })
 
@@ -56,17 +65,43 @@ export default function Book({ story }: { story: StoryData }) {
     };
 
     const generateParagraphs = (script: Script[]) => {
-        return story.script.map((script, index) => (
-            <div className={clsx(styles['paragraph-container'])} key={index}>
-                <p>{`#${index + 1} - ${getCharacterName(story, script.speaker)}: `}</p>
-                {script.text}
-            </div>
-        ));
+        return story.script.map((script, index) => {
+            const speakerName = getCharacterName(story, script.speaker);
+            const backgroundColor = colors[script.speaker % colors.length]; // Cycle through colors
+
+            return (
+                <div
+                    className={clsx(styles['paragraph-container'], styles['background'], styles[speakerName.toLowerCase()])}
+                    key={index}
+                    style={{ backgroundColor }}
+                >
+                    <p className={clsx(Robot700.className, styles['top'])}>{`${getCharacterName(story, script.speaker)} `}</p>
+                    <p className={clsx(Robot700.className, styles['number'])}>{`#${index + 1} `}</p>
+                    <p className={clsx(styles['text'])}>
+                        {script.text}
+                    </p>
+                </div>
+            );
+        });
     };
 
     return (
-        <div className={clsx(Robot400.className, styles['main-container'])}>
-            <h2>{story.title}</h2>
+        <div className={clsx(Robot300.className, styles['main-container'])}>
+
+            <div className={clsx(Robot700.className, styles['title-container'])}>
+                <h2>{story.title}</h2>
+                <p>{story.reference}</p>
+            </div>
+
+            <div style={{ position: "relative", height: "300px" }} className={clsx(styles['image-container'])}>
+                <Image
+                    className={styles.image}
+                    src={'/storypics/01.jpg'}
+                    layout="fill"
+                    objectFit="contain"
+                    alt='image'
+                />
+            </div>
 
             <div className={clsx(styles['book-container'])}>
                 {generateParagraphs(story.script)}
