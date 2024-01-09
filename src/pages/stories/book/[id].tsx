@@ -14,12 +14,12 @@ const colors = [
     "#f7f7f7", "#ddf8ff", "#f9ffdf", "#e0ffdf", "#dfeaff",
 ]
 
-const Robot300 = Roboto_Serif({
+const normal = Roboto_Serif({
     weight: '300',
     preload: false,
 })
 
-const Robot700 = Roboto_Serif({
+const bold = Roboto_Serif({
     weight: '700',
     preload: false,
 })
@@ -168,20 +168,40 @@ export default function Book({ story }: { story: StoryData }) {
     };
 
     const updateCurrentTime = () => {
+
         if (sound) {
+
             setCurrentTime(sound.seek() * 1000);
             requestAnimationFrame(updateCurrentTime); // Request the next animation frame
         }
     };
 
     const setPos = (seekPos) => {
+
         updateCurrentTime();
+
+        if (seekPos === -1) {
+            if (playing) {
+                sound.pause();
+                setPlaying(!playing);
+            }
+            else {
+                sound.play();
+
+                setPlaying(!playing);
+            }
+
+            return;
+        };
+
+
         if (playing) {
             if (sound) {
                 setSeek(seekPos);
             }
         } else {
             if (sound) {
+                setSeek(seekPos);
                 sound.play();
                 setPlaying(!playing);
 
@@ -192,7 +212,8 @@ export default function Book({ story }: { story: StoryData }) {
 
 
 
-        if (seekPos !== -1) setSeek(seekPos);
+
+
     };
 
     const getCharacterName = (story: StoryData, speakerID: number): string => {
@@ -201,12 +222,18 @@ export default function Book({ story }: { story: StoryData }) {
     };
 
     const generateCharacterList = (characters: Character[]) => {
-        return characters.map((character, index) => (
-            <div key={index}>
-                <p>{character.name}</p>
-                <p>{`Character ID: ${character.id}`}</p>
-            </div>
-        ));
+
+        return characters.map((character, index) => {
+            let backgroundColor = colors[index % colors.length]; // Cycle through colors
+
+            return (
+                <span key={index} style={{ backgroundColor }} >
+                    {character.name}
+                </span>
+            );
+
+        }
+        );
     };
 
 
@@ -224,8 +251,8 @@ export default function Book({ story }: { story: StoryData }) {
                         setPos(parseInt(script.startat) / 1000);
                     }}
                 >
-                    <p className={clsx(Robot700.className, styles['top'])}>{`${getCharacterName(story, script.speaker)} `}</p>
-                    <p className={clsx(Robot700.className, styles['number'])}>{`#${index + 1} `}</p>
+                    <p className={clsx(bold.className, styles['top'])}>{`${getCharacterName(story, script.speaker)} `}</p>
+                    <p className={clsx(bold.className, styles['number'])}>{`#${index + 1} `}</p>
                     <p className={clsx(styles['text'])}>
                         {script.text}
                     </p>
@@ -244,8 +271,8 @@ export default function Book({ story }: { story: StoryData }) {
                         setPos(parseInt(script.startat) / 1000);
                     }}
                 >
-                    <p className={clsx(Robot700.className, styles['top'])}> {(script.title)} </p>
-                    <p className={clsx(Robot700.className, styles['number'])}>{`#${index + lineCount + 1} `}</p>
+                    <p className={clsx(bold.className, styles['top'])}> {(script.title)} </p>
+                    <p className={clsx(bold.className, styles['number'])}>{`#${index + lineCount + 1} `}</p>
                     <p className={clsx(styles['text'])}>
                         {script.text}
                     </p>
@@ -256,36 +283,49 @@ export default function Book({ story }: { story: StoryData }) {
 
 
     return (
-        <div className={clsx(Robot300.className, styles['main-container'])}>
+        <div className={clsx(normal.className, styles['main-container'])}>
 
-            <div className={clsx(Robot700.className, styles['title-container'])}>
+            <div className={clsx(bold.className, styles['title-container'])}>
                 <h2>{story.title}</h2>
                 <p>{story.reference}</p>
 
-                <div className={clsx(styles['characer-list'])}>
+                <div className={clsx(normal.className, styles['characer-list'])}>
+                    <h3>Characters:</h3>
                     {generateCharacterList(story.characters)}
                 </div>
             </div>
 
-            <div style={{ position: "relative", height: "300px" }} className={clsx(styles['image-container'])}>
-                <Image
-                    className={styles.image}
-                    src={'/storypics/01.jpg'}
-                    layout="fill"
-                    objectFit="contain"
-                    alt='image'
-                />
-            </div>
+            <div className={clsx(styles['flex-container'])}>
+                <div className={clsx(styles['image-area'])}>
+                    <div style={{ position: "relative" }} className={clsx(styles['image-container'])}>
+                        <Image
+                            className={styles.image}
+                            src={'/storypics/01.jpg'}
+                            layout="fill"
+                            objectFit="cover"
+                            alt='image'
+                        />
+                    </div>
+                </div>
 
-            <div className={clsx(styles['book-container'])}>
-                {generateParagraphs(story.script)}
-            </div>
+                <div className={clsx(styles['book-area'])}>
+                    <div className={clsx(styles['play-button'])}>
+                        <button onClick={() => setPos(-1)}>
+                            {playing ? "STOP" : "PLAY"}
+                        </button>
+                    </div>
 
-            <div className={clsx(styles['subinfo-container'])}>
-                <h3 className={clsx(styles['title'])}>
-                    Quotes
-                </h3>
-                {generateSubinfo(story.subinfo)}
+                    <div className={clsx(styles['book-container'])}>
+                        {generateParagraphs(story.script)}
+                    </div>
+
+                    <div className={clsx(styles['subinfo-container'])}>
+                        <h3 className={clsx(styles['title'])}>
+                            Quotes
+                        </h3>
+                        {generateSubinfo(story.subinfo)}
+                    </div>
+                </div>
             </div>
         </div>
     )
