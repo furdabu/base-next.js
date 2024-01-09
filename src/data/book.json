@@ -124,12 +124,16 @@
         ],
         "subinfo": [
             {
+                "startat": "270000",
+                "endat": "285000",
                 "title": "Genesis 1:31",
-                "content": "God looked at everything he had made, and he was very pleased."
+                "text": "God looked at everything he had made, and he was very pleased."
             },
             {
+                "startat": "286000",
+                "endat": "318000",
                 "title": "Words from the Bible - John 1:1-4",
-                "content": "In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. In him was life, and that life was the light of men. "
+                "text": "In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. In him was life, and that life was the light of men. "
             }
         ]
     },

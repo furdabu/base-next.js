@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import BookPage from '@/modules/BibleStories/book/page';
 import clsx from 'clsx';
 
@@ -39,8 +39,10 @@ interface Script {
 }
 
 interface Subinfo {
+    startat: string;
+    endat: string;
     title: string;
-    content: string;
+    text: string;
 }
 
 interface StoryData {
@@ -69,7 +71,19 @@ export default function Book({ story }: { story: StoryData }) {
     const [currentTime, setCurrentTime] = useState(0);
     const [currentLine, setCurrentLine] = useState(-1);
 
+    const [lineCount, setlineCount] = useState(0);
+
     const timelist = story.script.map(element => {
+        return (
+            {
+                "start": element.startat,
+                "end": element.endat
+            }
+        )
+    })
+
+
+    const timelistSub = story.subinfo.map(element => {
         return (
             {
                 "start": element.startat,
@@ -94,6 +108,10 @@ export default function Book({ story }: { story: StoryData }) {
 
         initializeSound();
         updateCurrentTime();
+
+        const lines = story.script.length;
+        setlineCount(lines);
+
         return () => {
             if (sound) {
                 sound.unload();
@@ -108,10 +126,17 @@ export default function Book({ story }: { story: StoryData }) {
     useEffect(() => {
         timelist.map((el, index) => {
             if (parseFloat(el.start) < currentTime && currentTime < parseFloat(el.end)) {
-                setCurrentLine(index);
+                return setCurrentLine(index);
             }
-
         })
+
+        timelistSub.map((el, index) => {
+            if (parseFloat(el.start) < currentTime && currentTime < parseFloat(el.end)) {
+                return setCurrentLine(index + lineCount);
+            }
+        })
+
+
     }, [currentTime]);
 
     useEffect(() => {
@@ -175,8 +200,18 @@ export default function Book({ story }: { story: StoryData }) {
         return character ? character.name : 'Unknown Character';
     };
 
+    const generateCharacterList = (characters: Character[]) => {
+        return characters.map((character, index) => (
+            <div key={index}>
+                <p>{character.name}</p>
+                <p>{`Character ID: ${character.id}`}</p>
+            </div>
+        ));
+    };
+
+
     const generateParagraphs = (script: Script[]) => {
-        return story.script.map((script, index) => {
+        return script.map((script, index) => {
             const speakerName = getCharacterName(story, script.speaker);
             const backgroundColor = colors[script.speaker % colors.length]; // Cycle through colors
 
@@ -199,12 +234,37 @@ export default function Book({ story }: { story: StoryData }) {
         });
     };
 
+    const generateSubinfo = (script: Subinfo[]) => {
+        return script.map((script, index) => {
+            return (
+                <div
+                    className={clsx(index === currentLine - lineCount && styles['highlighted'], styles['paragraph-container'], styles['background'])}
+                    key={index}
+                    onClick={() => {
+                        setPos(parseInt(script.startat) / 1000);
+                    }}
+                >
+                    <p className={clsx(Robot700.className, styles['top'])}> {(script.title)} </p>
+                    <p className={clsx(Robot700.className, styles['number'])}>{`#${index + lineCount + 1} `}</p>
+                    <p className={clsx(styles['text'])}>
+                        {script.text}
+                    </p>
+                </div>
+            );
+        });
+    };
+
+
     return (
         <div className={clsx(Robot300.className, styles['main-container'])}>
 
             <div className={clsx(Robot700.className, styles['title-container'])}>
                 <h2>{story.title}</h2>
                 <p>{story.reference}</p>
+
+                <div className={clsx(styles['characer-list'])}>
+                    {generateCharacterList(story.characters)}
+                </div>
             </div>
 
             <div style={{ position: "relative", height: "300px" }} className={clsx(styles['image-container'])}>
@@ -219,6 +279,13 @@ export default function Book({ story }: { story: StoryData }) {
 
             <div className={clsx(styles['book-container'])}>
                 {generateParagraphs(story.script)}
+            </div>
+
+            <div className={clsx(styles['subinfo-container'])}>
+                <h3 className={clsx(styles['title'])}>
+                    Quotes
+                </h3>
+                {generateSubinfo(story.subinfo)}
             </div>
         </div>
     )

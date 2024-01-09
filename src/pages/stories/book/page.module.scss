@@ -5,6 +5,22 @@
     flex-direction: column;
     row-gap: 18px;
 
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+
+    border-bottom: 2px dashed black;
+
+}
+
+.subinfo-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+
+    >h3{
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
 
 }
 
@@ -38,7 +54,7 @@
 }
 
 .main-container {
-    padding: 15px;
+    padding: 15px 15px 80px;
 }
 
 
